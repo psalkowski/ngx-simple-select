@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -11,24 +11,22 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
+    "preserveSymlinks": false,
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
       "es2018",
       "dom"
-    ],
-    "paths": {
-      "ngx-simple-select": [
-        "dist/ngx-simple-select"
-      ],
-      "ngx-simple-select/*": [
-        "dist/ngx-simple-select/*"
-      ]
-    }
+    ]
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
-  }
+  },
+  "exclude": [
+    "demo",
+    "demo/**",
+    "demo/**/*"
+  ]
 }

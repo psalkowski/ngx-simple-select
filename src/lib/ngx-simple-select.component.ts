@@ -51,8 +51,7 @@ export class NgxSimpleSelectComponent implements ControlValueAccessor {
   private onTouchedCallback: () => void = noop;
   private onChangeCallback: (_: any) => void = noop;
 
-  constructor(private el: ElementRef) {
-
+  constructor() {
   }
 
   public focus() {
@@ -142,7 +141,6 @@ export class NgxSimpleSelectComponent implements ControlValueAccessor {
 
   // From ControlValueAccessor interface
   registerOnChange(fn: any) {
-    console.log('register on change', fn);
     this.onChangeCallback = fn;
   }
 
@@ -159,10 +157,11 @@ export class NgxSimpleSelectComponent implements ControlValueAccessor {
     this.selected = obj;
   }
 
-  @HostListener('document:click', ['$event'])
-  public onDocumentClick(event) {
-    if (!this.el.nativeElement.contains(event.target)) {
-      this.opened = false;
-    }
-  }
+  // @HostListener('document:click', ['$event'])
+  // public onDocumentClick(event) {
+  //   if (!this.el.nativeElement.contains(event.target)) {
+  //     this.opened = false;
+  //   }
+  // }
+
 }

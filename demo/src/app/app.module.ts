@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {NgxSimpleSelectModule} from '../../../dist/ngx-simple-select';
+import {NgxSimpleSelectModule} from 'ngx-simple-select';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -10,6 +11,7 @@ import {NgxSimpleSelectModule} from '../../../dist/ngx-simple-select';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     NgxSimpleSelectModule,
   ],
   providers: [],

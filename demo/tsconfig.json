@@ -19,12 +19,9 @@
       "dom"
     ],
     "paths": {
-      "ngx-simple-select": [
-        "dist/ngx-simple-select"
-      ],
-      "ngx-simple-select/*": [
-        "dist/ngx-simple-select/*"
-      ]
+      "@angular/*": ["node_modules/@angular/*"],
+      "ngx-simple-select": ["../dist"],
+      "ngx-simple-select/*": ["../dist/*"]
     }
   },
   "angularCompilerOptions": {
