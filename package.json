@@ -1,6 +1,6 @@
 {
   "name": "ngx-simple-select",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,6 +9,19 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "author": {
+    "name": "Piotr Sałkowski",
+    "email": "skc.peter@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/namerci/ngx-simple-select/issues"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/namerci/ngx-simple-select.git"
+  },
+  "homepage": "https://github.com/namerci/ngx-simple-select",
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.11",
