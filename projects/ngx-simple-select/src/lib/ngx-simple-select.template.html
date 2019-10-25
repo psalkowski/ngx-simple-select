@@ -1,0 +1,14 @@
+<div class="simple-select" (click)="toggle()">
+    <template *ngIf="selected !== null && selected !== undefined && selected !== ''" [ngTemplateOutlet]="templateVariable" [ngTemplateOutletContext]="{option: selected}"></template>
+    <span *ngIf="selected === null || selected === '' || selected === undefined">{{ placeholder }}</span>
+
+    <div class="simple-select-icon"></div>
+</div>
+
+<div class="simple-select-container" #container>
+    <div class="simple-select-option" *ngFor="let option of options; index as i" (click)="select(option, i)" [ngClass]="{'selected': i === selectedIndex}">
+        <template [ngTemplateOutlet]="templateVariable" [ngTemplateOutletContext]="{option: option}"></template>
+    </div>
+</div>
+
+<input class="simple-select-input" type="text" [attr.id]="id" (focus)="focus()">

@@ -1,0 +1,111 @@
+$height: 50px;
+$primary: #ff6200;
+$gray: #ccc;
+
+:host {
+  tab-index: 0;
+  display: block;
+  position: relative;
+  font-size: 13px;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  &.open {
+    .simple-select {
+      box-shadow: 0 0 6px rgba($primary, 0.64);
+      border: 1px solid #d8dde2;
+    }
+
+    .simple-select-container {
+      display: flex;
+    }
+
+    .simple-select-icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  &.disabled,
+  &.readonly{
+    .simple-select {
+      background-color: #eeeeee;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.simple-select-input {
+  position: absolute;
+  z-index: -1;
+  height: 0;
+  width: 0;
+  padding: 0;
+  border: 0;
+}
+
+.simple-select {
+  min-height: $height;
+  border: 1px solid $gray;
+  display: flex;
+  align-items: center;
+  background: white;
+  cursor: pointer;
+  position: relative;
+  padding: 8px 40px 8px 16px;
+}
+
+.simple-select-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: $primary;
+
+  &:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 4px 0 4px;
+    border-color: $primary transparent transparent transparent;
+  }
+}
+
+.simple-select-container {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 10px;
+  box-shadow: 0 0 6px rgba($primary, 0.64);;
+  border: 1px solid #d8dde2;;
+  flex-direction: column;
+  background: white;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  z-index: 10;
+  max-height: ($height * 3) + 24px;
+  overflow: auto;
+}
+
+.simple-select-option {
+  width: 100%;
+  padding: 12px 16px;
+  cursor: pointer;
+
+  &:hover {
+    background: #ededed;
+  }
+
+  &.selected {
+    background: #ededed;
+  }
+}
