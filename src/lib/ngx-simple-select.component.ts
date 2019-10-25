@@ -1,17 +1,18 @@
 import {
   Component,
   ContentChild,
-  ElementRef,
   EventEmitter,
   forwardRef,
-  HostBinding, HostListener,
+  HostBinding,
   Input,
   Output,
-  TemplateRef, ViewChild
+  TemplateRef,
+  ViewChild,
+  ViewEncapsulation
 } from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {of} from 'rxjs';
-import {map, min, reduce} from 'rxjs/operators';
+import {map, min} from 'rxjs/operators';
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -25,6 +26,7 @@ const noop = () => {
 @Component({
   selector: 'ngx-simple-select',
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
+  encapsulation: ViewEncapsulation.None,
   templateUrl: './ngx-simple-select.template.html',
   styleUrls: ['./ngx-simple-select.styles.scss']
 })
