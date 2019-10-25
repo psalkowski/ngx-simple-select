@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "publish": "ng build ngx-simple-select && cd dist/ngx-simple-select && npm publish"
+    "publish": "ng build && npm publish dist"
   },
   "author": {
     "name": "Piotr Sałkowski",
@@ -23,7 +23,7 @@
     "url": "https://github.com/namerci/ngx-simple-select.git"
   },
   "homepage": "https://github.com/namerci/ngx-simple-select",
-  "private": true,
+  "private": false,
   "peerDependencies": {
     "@angular/common": "^8.2.11",
     "@angular/core": "^8.2.11"
