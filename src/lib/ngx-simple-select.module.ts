@@ -8,7 +8,6 @@ import {BrowserModule} from '@angular/platform-browser';
   declarations: [NgxSimpleSelectComponent],
   imports: [
     CommonModule,
-    BrowserModule
   ],
   exports: [NgxSimpleSelectComponent]
 })
