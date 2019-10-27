@@ -1,6 +1,6 @@
 # ngx-simple-select
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.11.
+Lightweight and simple custom select for Angular.
 
 ## Install
 If you use `npm`, enter:
