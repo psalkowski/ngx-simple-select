@@ -1,6 +1,6 @@
 # ngx-simple-select
 
-Lightweight and simple custom select for Angular.
+Lightweight and simple custom select for Angular. Demo: https://stackblitz.com/edit/angular-nhwmv9
 
 ## Install
 If you use `npm`, enter:
@@ -58,7 +58,9 @@ Encapsulation for styles is disabled for easier overwriting for your needs. You 
 
 ## Demo
 
-To run demo, you need to build library locally (see *Build* section), then run:
+You can check demo online on https://stackblitz.com/edit/angular-nhwmv9 or run it locally.
+
+To run demo locally with latest changes, you need to build library (see *Build* section), then run:
 ```
 cd demo
 npm install

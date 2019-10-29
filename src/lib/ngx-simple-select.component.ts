@@ -32,7 +32,7 @@ const noop = () => {
 })
 export class NgxSimpleSelectComponent implements ControlValueAccessor {
   @Input() public options: any;
-  @Input() public placeholder = 'Wybierz opcję';
+  @Input() public placeholder = 'Select option';
   @HostBinding('class.disabled')
   @Input() public disabled: boolean = null;
   @HostBinding('class.readonly')
@@ -158,12 +158,4 @@ export class NgxSimpleSelectComponent implements ControlValueAccessor {
   writeValue(obj: any): void {
     this.selected = obj;
   }
-
-  // @HostListener('document:click', ['$event'])
-  // public onDocumentClick(event) {
-  //   if (!this.el.nativeElement.contains(event.target)) {
-  //     this.opened = false;
-  //   }
-  // }
-
 }

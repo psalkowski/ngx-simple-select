@@ -1,40 +1,36 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: [ './app.component.css' ]
 })
-export class AppComponent {
+export class AppComponent  {
   options = [
     {
-      label: 'Foo',
-      value: 'foo'
-    }, {
-      label: 'Bar',
-      value: 'bar'
-    }, {
-      label: 'Foo',
-      value: 'foo'
-    }, {
-      label: 'Bar',
-      value: 'bar'
-    }, {
-      label: 'Foo',
-      value: 'foo'
-    }, {
-      label: 'Bar',
-      value: 'bar'
-    }, {
-      label: 'Foo',
-      value: 'foo'
-    }, {
-      label: 'Bar',
-      value: 'bar'
+      label: 'New York',
+      value: 'ny'
+    },
+    {
+      label: 'San Francisco',
+      value: 'sf'
+    },
+    {
+      label: 'Warsaw',
+      value: 'w'
     }
   ];
 
-  onChange(e) {
-    console.log('onChange', e);
+  formControl: FormControl;
+  ngModelValue: any;
+  onChangeCallbackValue: any;
+
+  constructor() {
+    this.formControl = new FormControl();
+  }
+
+  onChange(val) {
+    this.onChangeCallbackValue = val;
   }
 }

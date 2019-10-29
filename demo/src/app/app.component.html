@@ -1,6 +1,48 @@
-<ngx-simple-select [options]="options" (ngOnChange)="onChange($event)">
-  <ng-template let-option="option">
-    {{option.label}}
-  </ng-template>
-</ngx-simple-select>
+<h2>ngModel example</h2>
+
+<div class="form-group">
+  <label for="city-reactive">Select city</label>
+
+  <ngx-simple-select id="city-reactive" [options]="options" [formControl]="formControl">
+    <ng-template let-option="option">
+      {{option.label}}
+    </ng-template>
+  </ngx-simple-select>
+</div>
+
+<pre>{{ formControl.value | json }}</pre>
+
+<hr>
+
+<h2>ngModel example</h2>
+
+<div class="form-group">
+  <label for="city-model">Select city</label>
+
+  <ngx-simple-select id="city-model" [options]="options" [(ngModel)]="ngModelValue">
+    <ng-template let-option="option">
+      {{option.label}}
+    </ng-template>
+  </ngx-simple-select>
+</div>
+
+<pre>{{ ngModelValue | json }}</pre>
+
+<hr>
+
+
+<h2>ngOnChange callback example</h2>
+
+<div class="form-group">
+  <label for="city-callback">Select city</label>
+
+  <ngx-simple-select id="city-callback" [options]="options" (ngOnChange)="onChange($event)">
+    <ng-template let-option="option">
+      {{option.label}}
+    </ng-template>
+  </ngx-simple-select>
+</div>
+
+<pre>{{ onChangeCallbackValue | json }}</pre>
+
 
