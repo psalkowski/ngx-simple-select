@@ -23,6 +23,7 @@ describe('NgxSimpleSelectComponent', () => {
   });
 
   afterEach(() => {
+    fixture.destroy();
     fixture = null;
     component = null;
   });
