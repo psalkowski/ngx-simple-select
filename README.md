@@ -20,7 +20,7 @@ $ npm install ngx-simple-select --save
 
 If you use `yarn`, enter:
 ```
-$ yarn add ngx-simply-select
+$ yarn add ngx-simple-select
 ```
 
 ## Usage
