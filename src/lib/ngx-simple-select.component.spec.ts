@@ -1,6 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {NgxSimpleSelectComponent} from './ngx-simple-select.component';
+import createSpyObj = jasmine.createSpyObj;
 
 describe('NgxSimpleSelectComponent', () => {
   let component: NgxSimpleSelectComponent;
@@ -14,7 +15,10 @@ describe('NgxSimpleSelectComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NgxSimpleSelectComponent);
+
     component = fixture.componentInstance;
+    component.options = ['foo', 'bar'];
+
     fixture.detectChanges();
   });
 
@@ -111,6 +115,70 @@ describe('NgxSimpleSelectComponent', () => {
       component.hide();
 
       expect(component.opened).toBeFalsy();
+    });
+  });
+
+  describe('select', () => {
+    it('should do nothing if readonly', () => {
+      component.opened = true;
+      component.disabled = false;
+      component.readonly = true;
+      component.select(1);
+
+      expect(component.selectedIndex).toBeUndefined();
+      expect(component.opened).toBeTruthy();
+    });
+
+    it('should do nothing if disabled', () => {
+      component.opened = true;
+      component.disabled = true;
+      component.readonly = false;
+      component.select(1);
+
+      expect(component.selectedIndex).toBeUndefined();
+      expect(component.opened).toBeTruthy();
+    });
+
+    it('should set value', () => {
+      component.select(1);
+
+      expect(component.selectedIndex).toBe(1);
+      expect(component.value).toBe(component.options[1]);
+      expect(component.opened).toBeFalsy();
+    });
+  });
+
+  describe('value', () => {
+    it('get value return selected value', () => {
+      component.selected = 'foo';
+
+      expect(component.value).toBe('foo');
+    });
+
+    it('set same value as before should not trigger callbacks', () => {
+      spyOn(component.ngOnChange, 'emit');
+
+      const spy = jasmine.createSpy();
+      component.registerOnChange(spy);
+      component.selected = 'foo';
+      component.value = 'foo';
+
+      expect(spy).toHaveBeenCalledTimes(0);
+      expect(component.ngOnChange.emit).toHaveBeenCalledTimes(0);
+      expect(component.value).toBe('foo');
+    });
+
+    it('set new value should trigger callbacks', () => {
+      spyOn(component.ngOnChange, 'emit');
+
+      const spy = jasmine.createSpy();
+      component.registerOnChange(spy);
+      component.selected = 'foo';
+      component.value = 'bar';
+
+      expect(spy).toHaveBeenCalledTimes(1);
+      expect(component.ngOnChange.emit).toHaveBeenCalledTimes(1);
+      expect(component.value).toBe('bar');
     });
   });
 });

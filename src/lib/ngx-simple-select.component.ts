@@ -82,14 +82,14 @@ export class NgxSimpleSelectComponent implements ControlValueAccessor {
     this.scrollPosition();
   }
 
-  public select(option: any, index: number) {
+  public select(index: number) {
     if (!this.isInteractive()) {
       return;
     }
 
     this.opened = false;
     this.selectedIndex = index;
-    this.value = option;
+    this.value = this.options[index];
   }
 
   // get accessor
