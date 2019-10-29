@@ -53,22 +53,11 @@ export class NgxSimpleSelectComponent implements ControlValueAccessor {
   private onTouchedCallback: () => void = noop;
   private onChangeCallback: (_: any) => void = noop;
 
-  constructor() {
-  }
-
   public focus() {
-    if (this.disabled || this.readonly) {
-      return;
-    }
-
     this.open();
   }
 
   public toggle() {
-    if (this.disabled || this.readonly) {
-      return;
-    }
-
     if (this.opened) {
       this.hide();
     } else {
@@ -77,7 +66,7 @@ export class NgxSimpleSelectComponent implements ControlValueAccessor {
   }
 
   public hide() {
-    if (this.disabled || this.readonly) {
+    if (!this.isInteractive()) {
       return;
     }
 
@@ -85,7 +74,7 @@ export class NgxSimpleSelectComponent implements ControlValueAccessor {
   }
 
   public open() {
-    if (this.disabled || this.readonly) {
+    if (!this.isInteractive()) {
       return;
     }
 
@@ -93,32 +82,8 @@ export class NgxSimpleSelectComponent implements ControlValueAccessor {
     this.scrollPosition();
   }
 
-  private scrollPosition() {
-    const container = this.container.nativeElement;
-    const options = container.querySelectorAll('.simple-select-option');
-
-    if (this.selectedIndex >= 0) {
-      setTimeout(() => {
-        of(...options).pipe(
-          map(a => a.clientHeight),
-          min((a, b) => a < b ? -1 : 1)
-        ).subscribe(height => {
-          container.scrollTop = height * this.selectedIndex;
-        });
-      });
-    }
-  }
-
-  private isSelected(option) {
-    if (!this.selected) {
-      return false;
-    }
-
-    return JSON.stringify(this.selected) === JSON.stringify(option);
-  }
-
   public select(option: any, index: number) {
-    if (this.disabled || this.readonly) {
+    if (!this.isInteractive()) {
       return;
     }
 
@@ -157,5 +122,33 @@ export class NgxSimpleSelectComponent implements ControlValueAccessor {
 
   writeValue(obj: any): void {
     this.selected = obj;
+  }
+
+  private scrollPosition() {
+    const container = this.container.nativeElement;
+    const options = container.querySelectorAll('.simple-select-option');
+
+    if (this.selectedIndex >= 0) {
+      setTimeout(() => {
+        of(...options).pipe(
+          map(a => a.clientHeight),
+          min((a, b) => a < b ? -1 : 1)
+        ).subscribe(height => {
+          container.scrollTop = height * this.selectedIndex;
+        });
+      });
+    }
+  }
+
+  private isSelected(option) {
+    if (!this.selected) {
+      return false;
+    }
+
+    return JSON.stringify(this.selected) === JSON.stringify(option);
+  }
+
+  private isInteractive() {
+    return !this.disabled && !this.readonly;
   }
 }
