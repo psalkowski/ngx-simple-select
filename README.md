@@ -1,12 +1,12 @@
 <h3 align="center">ngx-simple-select</h3>
 
-<div align="center">
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-![npm](https://img.shields.io/npm/dt/ngx-simple-select.svg)
-[![npm version](https://badge.fury.io/js/ngx-simple-select.svg)](https://badge.fury.io/js/ngx-simple-select)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
-[![Build Status](https://travis-ci.org/namerci/ngx-simple-select.svg?branch=master)](https://travis-ci.org/namerci/ngx-simple-select)
-</div>
+<p align="center">
+    <img src="https://img.shields.io/badge/status-active-success.svg" alt="status" >
+    <a href="https://badge.fury.io/js/ngx-simple-select"><img src="https://badge.fury.io/js/ngx-simple-select.svg" alt="npm version" ></a>
+    <a href="https://npmjs.org/ngx-simple-select"><img src="https://img.shields.io/npm/dt/ngx-simple-select.svg" alt="npm downloads" ></a>
+    <a href="https://travis-ci.org/namerci/ngx-simple-select"><img alt="Build Status" src="https://travis-ci.org/namerci/ngx-simple-select.svg?branch=master"></a>
+    <a href="/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+</p>
 
 <p align="center">
     Lightweight and simple custom select for Angular. Demo: https://stackblitz.com/edit/angular-nhwmv9
