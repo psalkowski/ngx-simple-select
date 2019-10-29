@@ -1,9 +1,9 @@
 import {
   Component,
-  ContentChild,
+  ContentChild, ElementRef,
   EventEmitter,
   forwardRef,
-  HostBinding,
+  HostBinding, HostListener,
   Input,
   Output,
   TemplateRef,
@@ -53,6 +53,10 @@ export class NgxSimpleSelectComponent implements ControlValueAccessor {
   private onTouchedCallback: () => void = noop;
   private onChangeCallback: (_: any) => void = noop;
 
+  constructor(private el: ElementRef) {
+
+  }
+
   public focus() {
     this.open();
   }
@@ -90,6 +94,13 @@ export class NgxSimpleSelectComponent implements ControlValueAccessor {
     this.opened = false;
     this.selectedIndex = index;
     this.value = this.options[index];
+  }
+
+  @HostListener('document:click', ['$event'])
+  public onDocumentClick(event) {
+    if (!this.el.nativeElement.contains(event.target)) {
+      this.opened = false;
+    }
   }
 
   // get accessor

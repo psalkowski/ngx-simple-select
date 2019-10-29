@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-    Lightweight and simple custom select for Angular. Demo: <a href="https://stackblitz.com/edit/angular-nhwmv9">https://stackblitz.com/edit/angular-nhwmv9</a>
+    Lightweight and simple custom select for Angular. It works on Angular 6 and later. Demo: <a href="https://stackblitz.com/edit/angular-nhwmv9">https://stackblitz.com/edit/angular-nhwmv9</a>. 
 </p>
 
 ## Install
