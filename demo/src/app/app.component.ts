@@ -7,7 +7,6 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   options = [
-
     {
       label: 'Foo',
       value: 'foo'
