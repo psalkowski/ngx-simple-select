@@ -1,6 +1,16 @@
-# ngx-simple-select
+<h3 align="center">ngx-simple-select</h3>
 
-Lightweight and simple custom select for Angular. Demo: https://stackblitz.com/edit/angular-nhwmv9
+<div align="center">
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+![npm](https://img.shields.io/npm/dt/ngx-simple-select.svg)
+[![npm version](https://badge.fury.io/js/ngx-simple-select.svg)](https://badge.fury.io/js/ngx-simple-select)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+[![Build Status](https://travis-ci.org/namerci/ngx-simple-select.svg?branch=master)](https://travis-ci.org/namerci/ngx-simple-select)
+</div>
+
+<p align="center">
+    Lightweight and simple custom select for Angular. Demo: https://stackblitz.com/edit/angular-nhwmv9
+</p>
 
 ## Install
 If you use `npm`, enter:
